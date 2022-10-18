@@ -1,7 +1,9 @@
-<< Metode numerice - Tema 1 >>
-<< Vlad Costin Andrei, 311CD >>
+# Metode numerice - Tema 1
 
-- Cerinta 1 -
+Enuntul proiectului se afla in fisierul numit "Tema1.pdf".
+
+  Cerinta 1
+-------------
   Pentru rezolvarea prin metoda iterativa am construit matricea stocastica
 prin intermediul functiei auxiliare "buildM" pe care o voi explica mai jos.
 Dupa obtinerea matricii stocastice, ma voi folosi de 2 vectori coloana de N
@@ -15,7 +17,8 @@ este matricea stocastica. Apoi rulam algoritmul, facand iteratii pana cand
 solutia de la pasul k, converge la o anumita valoare (cautam o precizie data
 de parametrul epsilon). La final intoarcem ultima iteratie.
 
-- Cerinta 2 -
+  Cerinta 2
+------------
   Pentru rezolvarea prin metoda algebrica, vom construi din nou matricea
 stocastica, apoi aflam vectorul PageRank dupa formula :
                PR_Inv(eye(N) - d * M) * (1-d) / N * ones(N, 1)
@@ -26,18 +29,20 @@ care dorim sa o inversam. Apoi aflam inversa astfel :
                             Q * R * A^(-1) = I
                      Q^(-1) * Q * R * A^(-1) = Q^(-1)
                    R * A^(-1) = Q^(-1) = Qt (Q transpus)
-Apoi rezolvam un sistem linear de ecuatii, in care matricea coeficientilor este
+  Apoi rezolvam un sistem linear de ecuatii, in care matricea coeficientilor este
 una superior triunghiulara. Aflam pe rand liniile matricei A^(-1), si incepem cu
 elementul de pe linia N, pana la primul element de pe linie.
 
-** functia buildM **
+  ***functia buildM*** 
+  
   In aceasta functie citim din fisierul de input numarul de pagini web si pentru
 fiecare pagina, celelalte pagini la care aceasta are linkuri. Punem in matrice la
 linia si coloana corespunzatoare 1 daca exista link de la o pagina la cealalta
 (totusi ignoram linkurile spre aceeasi pagina). La final impartim fiecare linie la
 numarul de elemente (linuri valide) pentru a o transforma intr-o matrice stocastica.
 
-- Cerinta 3 -
+  Cerinta 3
+-------------
   In functia PageRank vom citi din fisierul de input valorile val1 si val2, apoi
 apelam functia "Apartenenta" pentru a afla valoarea functiei u. Aceasta trebuie
 sa fie continua, asa ca limitele laterale trebuie sa fie egale :
@@ -47,7 +52,7 @@ sa fie continua, asa ca limitele laterale trebuie sa fie egale :
 vectorul PageRank calculat prin metoda algebrica, folosim algoritmul Bubble sort,
 si folosim un vector auxiliar pentru a retine pozia initiala a elementului.
 
-Resurse :
+***Resurse :***
 - https://en.wikipedia.org/wiki/PageRank
 - Eastern-European Journal of Enterprise Technologies, "An algebraic method for
 calculating PageRank" (V. Vlasyuk, O. Galchonkov, A. Nevrev)
